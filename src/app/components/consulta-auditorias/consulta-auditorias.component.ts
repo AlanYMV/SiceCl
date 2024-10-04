@@ -34,6 +34,7 @@ interface Tienda{
 }
 
 interface Auditoria{
+  tienda: string,
   pedido: string,
   carga: string,
   fechaRecepcion: string,

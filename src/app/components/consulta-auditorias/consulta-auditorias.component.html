@@ -30,7 +30,7 @@
         <div class="col">
             <button class="btn btn-primary" (click)="buscarAuditorias(tienda.value, fechaInicio.value, fechaFin.value)">Buscar</button>
             
-            <a href="{{'http://192.168.84.108:8080/servicios/auditoria_tienda_descarga_cl/'+tienda.value+ '/'+fechaInicio.value+'/'+fechaFin.value+'/'}}" class="btn btn-primary ms-2">Descargar</a>
+            <a href="{{'http://127.0.0.1:8000/servicios/auditoria_tienda_descarga_cl/'+tienda.value+ '/'+fechaInicio.value+'/'+fechaFin.value+'/'}}" class="btn btn-primary ms-2">Descargar</a>
         </div>
         <!--div class="col" *ngIf="auditorias.length>0">
             <a href="{{'http://192.168.84.108:8080/servicios/recibo_tienda_file_cl/'+fechaInicio.value+'/'+fechaFin.value+'/'}}" class="btn btn-primary">Descargar</a>
@@ -41,6 +41,7 @@
 <table class="table table-sm">
     <thead>
         <tr>
+            <th scope="col">Tienda</th>
             <th scope="col">Carga</th>
             <th scope="col">Pedido</th>
             <th scope="col">Fecha Recepción</th>
@@ -51,6 +52,7 @@
     </thead>
     <tbody>
         <tr *ngFor="let auditoria of auditorias">
+            <td>{{auditoria.tienda}}</td>
             <td>{{auditoria.carga}}</td>
             <td>{{auditoria.pedido}}</td>
             <td>{{auditoria.fechaRecepcion}}</td>
