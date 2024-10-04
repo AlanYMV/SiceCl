@@ -1,0 +1,24 @@
+<h1>Porcentaje de SKUs Prioritarios</h1>
+<hr>
+<div>
+    <div class="row">
+        <div class="col">
+            <input class="form-control" type="text" placeholder="Ubicación" #ubicaion>
+        </div>
+        <div class="col">
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col">
+            <input class="form-control" type="text" placeholder="Item" (keyup.enter)="buscarItem(ubicaion.value, item.value)" #item>
+        </div>
+        <div class="col">
+            <button class="btn btn-primary" (click)="buscarItem(ubicaion.value, item.value)">Buscar</button>
+        </div>
+    </div>
+</div>
+<hr>
+<h2> Descripcion: {{descripcion}}</h2>
+<h2> Piezas Inner: {{piezasInner | number: '0.0'}} </h2>
+<h2> Piezas Caja: {{piezasCaja | number: '0.0'}} </h2>

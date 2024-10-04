@@ -1,0 +1,69 @@
+<h1>Consulta de Auditorias</h1>
+<hr>
+<div>
+    <div class="row">
+        <div class="col">
+            Tienda
+        </div>
+        <div class="col">
+            <select class="form-select" #tienda>
+            <option *ngFor="let tienda of tiendas" value="{{tienda.claveAlmacen}}">{{tienda.claveAlmacen}} - {{tienda.nombreAlmacen}}</option>
+        </select>
+        </div>
+        <div class="col">
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col">
+            Fecha Inicio:
+        </div>
+        <div class="col">
+            <input class="form-control" type="date" placeholder="Fecha inicio" required pattern="\d{4}-\d{2}-\d{2}" #fechaInicio>
+        </div>
+        <div class="col">
+            Fecha Fin:
+        </div>
+        <div class="col">
+            <input class="form-control" type="date" placeholder="Fecha fin" required pattern="\d{4}-\d{2}-\d{2}" #fechaFin>
+        </div>
+        <div class="col">
+            <button class="btn btn-primary" (click)="buscarAuditorias(tienda.value, fechaInicio.value, fechaFin.value)">Buscar</button>
+            
+            <a href="{{'http://192.168.84.108:8080/servicios/auditoria_tienda_descarga_cl/'+tienda.value+ '/'+fechaInicio.value+'/'+fechaFin.value+'/'}}" class="btn btn-primary ms-2">Descargar</a>
+        </div>
+        <!--div class="col" *ngIf="auditorias.length>0">
+            <a href="{{'http://192.168.84.108:8080/servicios/recibo_tienda_file_cl/'+fechaInicio.value+'/'+fechaFin.value+'/'}}" class="btn btn-primary">Descargar</a>
+        </div-->
+    </div>
+</div>
+<p></p>
+<table class="table table-sm">
+    <thead>
+        <tr>
+            <th scope="col">Carga</th>
+            <th scope="col">Pedido</th>
+            <th scope="col">Fecha Recepción</th>
+            <th scope="col">Total Contenedores</th>
+            <th scope="col">Contenedores Auditados</th>
+            <th scope="col">% Contenedores Auditados</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let auditoria of auditorias">
+            <td>{{auditoria.carga}}</td>
+            <td>{{auditoria.pedido}}</td>
+            <td>{{auditoria.fechaRecepcion}}</td>
+            <td>{{auditoria.totalContenedores}}</td>
+            <td>{{auditoria.contenedoresAuditados}}</td>
+            <td>{{auditoria.porcentaje}}</td>
+        </tr>
+    </tbody>
+</table>
+<div class="row" *ngIf="auditorias.length==0">
+    <div class="col-md-12">
+        <div class="alert alert-info" role="alert" align="Center">
+            No existen recibos en el periodo indicado.
+        </div>
+    </div>
+</div>

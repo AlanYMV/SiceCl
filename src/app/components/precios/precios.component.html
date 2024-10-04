@@ -1,0 +1,31 @@
+<h1>Precios</h1>
+<hr>
+<div>
+    <a href="http://192.168.84.108:8080/servicios/descarga_precios_cl" class="btn btn-primary">Descargar Precios</a>
+</div>
+<table class="table table-sm">
+    <thead>
+        <tr>
+            <th scope="col">Sku</th>
+            <th scope="col">Codigos de Barras</th>
+            <th scope="col">Descripción</th>
+            <th scope="col">Licencia</th>
+            <th scope="col">Precio sin iva</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Precio en linea sin iva</th>
+            <th scope="col">Precio en linea</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let precio of precios">
+            <td>{{precio.itemCode}}</td>
+            <td>{{precio.codigoBarras}}</td>
+            <td>{{precio.itemName}}</td>
+            <td>{{precio.licencia}}</td>
+            <td>{{precio.precioSinIva | number: '.2-2'}}</td>
+            <td>{{precio.precioIva | number: '.2-2'}}</td>
+            <td>{{precio.precioLineaSinIva | number: '.2-2'}}</td>
+            <td>{{precio.precioLineaIva | number: '.2-2'}}</td>
+        </tr>
+    </tbody>
+</table>

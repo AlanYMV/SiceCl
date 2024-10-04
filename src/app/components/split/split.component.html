@@ -1,0 +1,21 @@
+<h1>Splits</h1>
+<hr>
+<div>
+    <a href="http://192.168.84.108:8080/servicios/splits_file_cl" class="btn btn-primary">Descargar Splits</a>
+</div>
+<table class="table table-sm">
+    <thead>
+        <tr>
+            <th scope="col">Pedido</th>
+            <th scope="col">Fecha de Creacion</th>
+            <th scope="col">Numero de Contenedores</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let split of splits">
+            <td>{{split.pedido}}</td>
+            <td>{{split.fechaCreacion}}</td>
+            <td>{{split.numeroContenedores}}</td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,41 @@
+<h1>Transacciones Pick & Put</h1>
+<hr>
+<div>
+    <a href="http://192.168.84.108:8080/servicios/transacciones_pick_put_fileCL" class="btn btn-primary">Descargar Transacciones</a>
+</div>
+<table class="table table-sm">
+    <thead>
+        <tr>
+            <th scope="col">Item</th>
+            <th scope="col">Usuario</th>
+            <th scope="col">Fecha</th>
+            <th scope="col">Ubicación</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Antes Transito</th>
+            <th scope="col">Despues Transito</th>
+            <th scope="col">Antes Existente</th>
+            <th scope="col">Despues Existente</th>
+            <th scope="col">Antes Comprometido</th>
+            <th scope="col">Despues Comprometido</th>
+            <th scope="col">Antes Suspendido</th>
+            <th scope="col">Despues Suspendido</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let transaccion of transacciones">
+            <td>{{transaccion.item}}</td>
+            <td>{{transaccion.nombreUsuario}}</td>
+            <td>{{transaccion.fecha}}</td>
+            <td>{{transaccion.ubicacion}}</td>
+            <td>{{transaccion.cantidad}}</td>
+            <td>{{transaccion.antesEnTransito}}</td>
+            <td>{{transaccion.despuesEnTransito}}</td>
+            <td>{{transaccion.antesAMano}}</td>
+            <td>{{transaccion.despuesAMano}}</td>
+            <td>{{transaccion.antesComprometido}}</td>
+            <td>{{transaccion.despuesComprometido}}</td>
+            <td>{{transaccion.antesSuspenso}}</td>
+            <td>{{transaccion.despuesSuspenso}}</td>
+        </tr>
+    </tbody>
+</table>
