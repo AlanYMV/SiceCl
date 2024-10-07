@@ -28,6 +28,7 @@ import { UbicacionesVaciasComponent } from "./components/ubicaciones-vacias/ubic
 import { EstatusOlaComponent } from "./components/estatus-ola/estatus-ola.component";
 import { ReciboTiendaComponent } from "./components/recibo-tienda/recibo-tienda.component";
 import { ConsultaAuditoriasComponent } from "./components/consulta-auditorias/consulta-auditorias.component";
+import { ConfirmPending } from "./components/confirmacion-pendientes/confirmacion-pendientes.component";
 
 const APP_ROUTES : Routes = [
     { path:'home', component: HomeComponent},
@@ -50,6 +51,7 @@ const APP_ROUTES : Routes = [
     { path:'estatusOla', component: EstatusOlaComponent},
     { path:'recibo-tienda', component: ReciboTiendaComponent},
     { path:'consulta-auditoria', component: ConsultaAuditoriasComponent},
+    { path:'confirmacion-pendientes', component: ConfirmPending},
     { path:'**', pathMatch: 'full', redirectTo: 'home'}
 ];
 
