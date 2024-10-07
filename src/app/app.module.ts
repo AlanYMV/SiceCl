@@ -42,6 +42,7 @@ import { EstatusOlaComponent } from './components/estatus-ola/estatus-ola.compon
 import { ReciboTiendaComponent } from './components/recibo-tienda/recibo-tienda.component';
 import { ConsultaAuditoriasComponent } from './components/consulta-auditorias/consulta-auditorias.component';
 //import { ConetendorEpqComponent } from './components/conetendor-epq/conetendor-epq.component';
+import { ConfirmPending } from './components/confirmacion-pendientes/confirmacion-pendientes.component';
 
 
 @NgModule({
@@ -78,6 +79,7 @@ import { ConsultaAuditoriasComponent } from './components/consulta-auditorias/co
     ReciboTiendaComponent,
     ConsultaAuditoriasComponent,
 //    ConetendorEpqComponent,
+    ConfirmPending
   ],
   imports: [
     BrowserModule,
