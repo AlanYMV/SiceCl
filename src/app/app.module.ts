@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 /*Rutas*/
 import { APP_ROUTING } from './app.routes';
@@ -43,7 +45,9 @@ import { ReciboTiendaComponent } from './components/recibo-tienda/recibo-tienda.
 import { ConsultaAuditoriasComponent } from './components/consulta-auditorias/consulta-auditorias.component';
 //import { ConetendorEpqComponent } from './components/conetendor-epq/conetendor-epq.component';
 import { ConfirmPending } from './components/confirmacion-pendientes/confirmacion-pendientes.component';
-
+import { GetSubFamilyOrder } from './components/sub-family-orders/sub-family-orders.component';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -79,11 +83,16 @@ import { ConfirmPending } from './components/confirmacion-pendientes/confirmacio
     ReciboTiendaComponent,
     ConsultaAuditoriasComponent,
 //    ConetendorEpqComponent,
+    GetSubFamilyOrder,
     ConfirmPending
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     HttpClientModule,
+    MatTooltipModule,
+    RouterModule,
+    ReactiveFormsModule,    
     APP_ROUTING
   ],
   providers: [HeroesService],

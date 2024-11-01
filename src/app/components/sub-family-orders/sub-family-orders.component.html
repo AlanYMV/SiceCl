@@ -1,0 +1,23 @@
+<h1>Sub familia</h1> 
+<button class="btn btn-primary" (click)="goBack()">⇦   Regresar</button>
+<hr> 
+<table class="table table-sm"> 
+    <thead> 
+        <tr>
+            <th scope="col">Tienda</th> 
+            <th scope="col">Sub familia</th> 
+            <th scope="col">Total Contenedores</th> 
+            <th scope="col">Contenedores Auditados</th> 
+            <th scope="col">Porcentaje</th> 
+        </tr> 
+    </thead> 
+    <tbody> 
+        <tr *ngFor="let order of orders"> 
+            <td>{{ order.tienda }}</td>
+            <td>{{ order.sub }}</td> 
+            <td>{{ order.totalContenedor }}</td>
+            <td>{{ order.auditado }}</td>
+            <td>{{ order.porcentaje }}</td>
+        </tr> 
+    </tbody> 
+</table>

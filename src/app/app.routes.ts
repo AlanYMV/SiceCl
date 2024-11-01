@@ -30,6 +30,7 @@ import { ReciboTiendaComponent } from "./components/recibo-tienda/recibo-tienda.
 import { ConsultaAuditoriasComponent } from "./components/consulta-auditorias/consulta-auditorias.component";
 import { ConfirmPending } from "./components/confirmacion-pendientes/confirmacion-pendientes.component";
 import { DownloadsContainerQc } from "./components/container-qc/container-qc.component";
+import { GetSubFamilyOrder } from "./components/sub-family-orders/sub-family-orders.component";
 
 const APP_ROUTES : Routes = [
     { path:'home', component: HomeComponent},
@@ -53,7 +54,8 @@ const APP_ROUTES : Routes = [
     { path:'recibo-tienda', component: ReciboTiendaComponent},
     { path:'consulta-auditoria', component: ConsultaAuditoriasComponent},
     { path:'confirmacion-pendientes', component: ConfirmPending},
-    { path: 'containerQc',component: DownloadsContainerQc},
+    { path:'containerQc',component: DownloadsContainerQc},
+    { path:'sub-family-orders',component: GetSubFamilyOrder},
     { path:'**', pathMatch: 'full', redirectTo: 'home'}
 ];
 
